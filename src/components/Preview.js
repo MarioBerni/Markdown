@@ -1,18 +1,23 @@
 import React from 'react';
-import ReactMarkdown from 'react-markdown';
+import { marked } from 'marked';
+
+// Configurar las opciones de marked
+marked.setOptions({
+  headerIds: false, // Desactivar la generación de identificadores en los encabezados
+});
 
 function Preview({ markdown }) {
+  const html = marked(markdown);
+
   return (
     <div className="preview-container">
-      <h2>Previewer</h2>
-      <ReactMarkdown>{markdown}</ReactMarkdown>
+      <h2 className="preview-title">Previsualización</h2>
+      <div dangerouslySetInnerHTML={{ __html: html }}></div>
     </div>
   );
 }
 
 export default Preview;
-
-
 
 
 

@@ -6,10 +6,30 @@ import AppFooter from './components/AppFooter';
 import './styles.css';
 
 function App() {
-  const [input, setInput] = useState('');
+  const [markdown, setMarkdown] = useState(`# Encabezado H1
 
-  const handleInputChange = (e) => {
-    setInput(e.target.value);
+## Subencabezado H2
+
+[Enlace](https://www.example.com)
+
+\`Código en línea\`
+
+\`\`\`
+Bloque de código
+\`\`\`
+
+- Elemento de lista 1
+- Elemento de lista 2
+- Elemento de lista 3
+
+> Cita en bloque
+
+![Texto alternativo de la imagen](https://www.example.com/imagen.jpg)
+
+**Texto en negrita**`);
+
+  const handleMarkdownChange = (newMarkdown) => {
+    setMarkdown(newMarkdown);
   };
 
   return (
@@ -18,26 +38,15 @@ function App() {
         <AppHeader />
       </header>
       <div className="App">
-          <Editor handleInputChange={handleInputChange} />
-          <Preview markdown={input} />
+        <Editor markdown={markdown} onChange={handleMarkdownChange} />
+        <Preview markdown={markdown} />
       </div>
-        <footer>
-          <AppFooter />
-        </footer>
+      <footer>
+        <AppFooter />
+      </footer>
     </div>
   );
 }
 
 export default App;
-
-
-
-
-
-
-
-
-
-
-
 

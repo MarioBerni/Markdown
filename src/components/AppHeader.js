@@ -4,9 +4,9 @@ function AppHeader() {
   return (
     <header>
       <div className="logo">
-        <img src="logo.png" alt="logo" />
+        <img src="/images/logo.png" alt="logo" />
       </div>
-      <h1>Previsualizador de Markdown</h1>
+      <h1 className="header-title">Previsualizador</h1>
     </header>
   );
 }
