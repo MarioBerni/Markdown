@@ -1,0 +1,224 @@
+/* Estilos generales */
+body,
+html {
+  background: linear-gradient(to bottom, #2980b9, #6dd5fa);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+/* Estilos del encabezado */
+header {
+  color: #fff;
+  padding-top: 5px;
+  text-align: center;
+}
+
+h1 {
+  margin: 10px 0;
+  animation: scaleAnimation 3s infinite alternate;
+}
+
+@keyframes scaleAnimation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.logo img {
+  width: 100px;
+  height: auto;
+}
+
+
+/* Estilos del editor y la previsualización */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  box-sizing: border-box;
+  position: relative; /* Agregamos posición relativa */
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+  flex-grow: 1;
+  box-sizing: border-box;
+}
+
+.Editor {
+  width: 100%;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+#editor {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Estilos del contenedor del preview */
+.Preview {
+  flex-grow: 1;
+  padding: 10px;
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  overflow: auto;
+  box-sizing: border-box;
+}
+
+/* Estilos del pie de página */
+footer {
+  color: #fff;
+  padding: 5px;
+  text-align: center;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  flex-shrink: 0;
+}
+
+.editor-container,
+.preview-container {
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  padding: 5px;
+  width: 60%;
+  margin-bottom: 2%;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Para pantallas grandes */
+@media (min-width: 768px) {
+  .editor-container, #editor {
+    min-height: 20vh;
+  }
+}
+
+/* Para pantallas medianas */
+@media (min-width: 425px) and (max-width: 767px) {
+  .editor-container, #editor {
+    min-height: 15vh;
+  }
+}
+
+/* Para pantallas pequeñas */
+@media (max-width: 425px) {
+  .editor-container, #editor {
+    min-height: 10vh;
+  }
+}
+
+.preview-container {
+  flex-grow: 1;
+  width: 90%;
+  overflow: auto;
+  margin-bottom: 0;
+  white-space: pre-line;
+  max-height: calc(100vh - 240px); /* Resta el espacio del header, editor y footer */
+}
+
+h2 {
+  margin: 0px 0px 5px 0px;
+  animation: colorAnimation 3s infinite;
+}
+
+@keyframes colorAnimation {
+  0% {
+    color: red;
+  }
+  25% {
+    color: blue;
+  }
+  50% {
+    color: green;
+  }
+  75% {
+    color: orange;
+  }
+  100% {
+    color: red;
+  }
+}
+
+@media (min-width: 768px) {
+  body {
+    font-size: 20px;
+  }
+  .container .editor-container,
+  .container .preview-container {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  body {
+    font-size: 10px;
+  }
+  .container {
+    margin: 10px;
+  }
+}
+
+/* Estilos del editor y la previsualización */
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5px;
+  flex-grow: 1; /* Ocupa todo el espacio disponible */
+  box-sizing: border-box;
+  flex: 1 0 auto; /* Añade esta línea */
+}
+
+/* Estilos específicos para medidas relativas */
+.App .container {
+  margin: 20px 0; /* Eliminamos el margen horizontal */
+}
+
+@media (max-width: 425px) {
+  .container .preview-container {
+    max-height: calc(100vh - 355px); /* Restamos el espacio del header, editor y footer */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
