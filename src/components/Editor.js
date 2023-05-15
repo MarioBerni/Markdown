@@ -7,7 +7,7 @@ function Editor({ markdown, onChange }) {
 
   return (
     <div className="editor-container">
-      <h2>Editor</h2>
+      <h2 className="preview-title">Editor</h2>
       <textarea id="editor" value={markdown} onChange={handleEditorChange} />
     </div>
   );

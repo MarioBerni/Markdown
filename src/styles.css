@@ -1,36 +1,50 @@
 /* Estilos generales */
-body,
-html {
-  background: linear-gradient(45deg, #00ffcc, #ff00ff, #00ffcc);
-  font-family: Arial, sans-serif;
+html, body {
+  height: 100%; /* Ocupar toda la altura de la ventana */
   margin: 0;
   padding: 0;
-  height: 100vh; /* Utiliza el 100% del alto de la ventana */
-  width: 100%; /* Utiliza el 100% del ancho disponible */
-  animation: backgroundAnimation 10s infinite;
+  display: flex;
+  flex-direction: column;
+  font-size: 15px;
+  justify-content: center; /* Centrar verticalmente los elementos */
+  overflow-x: hidden; /* Evitar desbordamiento horizontal */
+  border: 2px solid blue;
 }
 
-@keyframes backgroundAnimation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
+body {
+  background: green;
+  font-family: Arial, sans-serif;
+  align-items: center; /* Centrar horizontalmente los elementos */
+}
+
+/* Tamaño de fuente para pantallas grandes */
+@media (min-width: 1024px) {
+  body {
+    font-size: 16px;
   }
 }
 
+/* Tamaño de fuente para pantallas medianas */
+@media (min-width: 768px) and (max-width: 1023px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+/* Tamaño de fuente para pantallas pequeñas */
+@media (max-width: 767px) {
+  body {
+    font-size: 12px;
+  }
+}
 /* Estilos del encabezado */
 header {
   color: #fff;
-  padding-top: 5px;
   text-align: center;
 }
 
 .header-title {
-  margin: 10px 0;
+  margin: 2% 0;
   animation: scaleAnimation 3s infinite alternate;
 }
 
@@ -49,146 +63,43 @@ header {
 .logo img {
   width: 30%;
   height: auto;
+  padding-top: 2%;
 }
 
-/* Estilos del editor y la previsualización */
-.app-container {
-  display: flex;
-  flex-direction: column;
-  min-height: 100%; /* Cambia esto a 100% */
-  height: 100%; /* Agrega esto */
-  box-sizing: border-box;
-  position: relative; /* Agregamos posición relativa */
-  width: 100%;
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 20px;
-  flex-grow: 1;
-  box-sizing: border-box;
-}
-
-.Editor {
-  width: 100%;
-  padding: 10px;
-  background-color: #fff;
-  border-radius: 4px;
-  margin-bottom: 10px;
-}
-
-#editor {
-  width: 100%;
-  box-sizing: border-box;
-}
-
-/* Estilos del contenedor del preview */
-.Preview {
-  flex-grow: 1;
-  padding: 10px;
-  background-color: #f8f8f8;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  overflow: auto;
-  box-sizing: border-box;
-}
-
-/* Estilos del pie de página */
 footer {
   color: #fff;
-  padding: 5px;
   text-align: center;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  flex-shrink: 0;
+  width: 100%;
 }
 
 .editor-container,
 .preview-container {
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  padding: 5px;
-  width: 60%;
+  border: 2% solid black;
+  border-radius: 2px;
+  padding: 1px;
+  width: 80%;
   margin-bottom: 2%;
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+  background-color: white;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* Para pantallas grandes */
-@media (min-width: 768px) {
-  .editor-container, #editor {
-    min-height: 20vh;
-  }
+.editor-container {
+  width: 70%;
+  flex-grow: 1; /* Ocupar todo el espacio vertical disponible */
+  display: flex;
+  flex-direction: column;
 }
 
-/* Para pantallas medianas */
-@media (min-width: 425px) and (max-width: 767px) {
-  .editor-container, #editor {
-    min-height: 15vh;
-  }
-}
-
-/* Para pantallas pequeñas */
-@media (max-width: 425px) {
-  .editor-container, #editor {
-    min-height: 10vh;
-  }
-}
-
-/* Resto de los estilos */
 .preview-container {
-  flex-grow: 1;
-  width: 90%;
-  padding: 10px;
-  background-color: #f8f8f8;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  overflow: auto; /* Agrega una barra de desplazamiento si el contenido se desborda */
-  box-sizing: border-box;
+  width: 95%;
+  flex-grow: 1; /* Ocupar todo el espacio vertical disponible */
 }
 
 .preview-title {
-  margin: 0px 0px 5px 0px;
+  margin: 0 0 5px 0;
   animation: colorAnimation 3s infinite;
-}
-
-@keyframes colorAnimation {
-  0% {
-    color: red;
-  }
-  25% {
-    color: blue;
-  }
-  50% {
-    color: green;
-  }
-  75% {
-    color: orange;
-  }
-  100% {
-    color: red;
-  }
-}
-
-@media (min-width: 768px) {
-  body {
-    font-size: 20px;
-  }
-  .container .editor-container,
-  .container .preview-container {
-    margin-bottom: 20px;
-  }
-}
-
-@media (max-width: 767px) {
-  body {
-    font-size: 10px;
-  }
-  .container {
-    margin: 10px;
-  }
 }
 
 /* Estilos del editor y la previsualización */
@@ -196,19 +107,43 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 5px;
-  flex-grow: 1; /* Ocupa todo el espacio disponible */
+  justify-content: center;
+  margin: 1%;
+  flex-grow: 1;
   box-sizing: border-box;
-  flex: 1 0 auto; /* Añade esta línea */
+  border: 4px solid red;
+  width: 100%;
+  height: 100%; /* Asegurar que ocupe todo el alto disponible */
 }
 
-/* Estilos específicos para medidas relativas */
-.App .container {
-  margin: 20px 0; /* Eliminamos el margen horizontal */
+#editor {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 1%;
+  max-width: 98%;
+  flex-grow: 1; /* Ocupar todo el espacio vertical disponible */
 }
 
-@media (max-width: 425px) {
-  .container .preview-container {
-    max-height: calc(100vh - 355px); /* Restamos el espacio del header, editor y footer */
-  }
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  width: 100%;
+  min-height: 100vh; /* Cambia 'height' a 'min-height' para asegurar que ocupe al menos toda la altura de la ventana */
+}
+
+
+
+
+
+
+
