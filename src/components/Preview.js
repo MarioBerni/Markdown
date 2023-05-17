@@ -4,6 +4,7 @@ import { marked } from 'marked';
 // Configurar las opciones de marked
 marked.setOptions({
   headerIds: false, // Desactivar la generación de identificadores en los encabezados
+  breaks: true, // Permitir saltos de línea simples
 });
 
 function Preview({ markdown }) {
@@ -18,6 +19,7 @@ function Preview({ markdown }) {
 }
 
 export default Preview;
+
 
 
 
