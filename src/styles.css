@@ -76,15 +76,19 @@ footer {
   width: 100%;
   background-color: rgb(102, 6, 6);
   color: white;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 footer p {
   font-family: 'Courier New', monospace;
   font-size: 0.8em;
   font-weight: bold;
+  margin: 10px;
   text-transform: uppercase;
   letter-spacing: 2%;
+  text-align: center;
 }
 
 .container {

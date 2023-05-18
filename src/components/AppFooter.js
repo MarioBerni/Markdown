@@ -4,7 +4,7 @@ function AppFooter() {
   const [text, setText] = useState('');
   const fullText = 'Desarrollado por Mario Berni';
   const typingSpeed = 120; // Tiempo entre cada letra
-  const pauseBeforeRestart = 2000; // Tiempo antes de reiniciar
+  const pauseBeforeRestart = 1000; // Tiempo antes de reiniciar
 
   useEffect(() => {
     let index = 0;
@@ -40,11 +40,17 @@ function AppFooter() {
 
   return (
     <footer>
-      <p>{text}</p>
+      <p>
+        <span style={{ visibility: 'hidden' }}>{fullText}</span>
+        {text}
+      </p>
     </footer>
-  );
+  );  
 }
 
 export default AppFooter;
+
+
+
 
 
