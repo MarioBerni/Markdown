@@ -40,17 +40,14 @@ function AppFooter() {
 
   return (
     <footer>
-      <p>
-        <span style={{ visibility: 'hidden' }}>{fullText}</span>
-        {text}
-      </p>
+      <div style={{ visibility: 'hidden', position: 'absolute' }}>
+        {fullText}
+      </div>
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%' }}>
+        <p>{text}</p>
+      </div>
     </footer>
   );  
 }
 
 export default AppFooter;
-
-
-
-
-
