@@ -36,27 +36,10 @@ header {
   text-align: center;
 }
 
-
-.header-title {
-  font-size: 2.5em;
-  color: #333;
-  text-align: center;
-  margin: 20px 0;
-  position: relative;
-  animation: scaleAnimation 1s ease-in-out infinite;
-  letter-spacing: 3%;
-}
-
-@keyframes scaleAnimation {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1);
-  }
-  100% {
-    transform: scale(1);
-  }
+.logo {
+  width: 30%;
+  height: auto;
+  padding-top: 2%;
 }
 
 .preview-title {
@@ -88,10 +71,21 @@ header {
 }
 
 footer {
-  color: #fff;
-  text-align: center;
+  position: sticky;
+  bottom: 0;
   width: 100%;
-  overflow: hidden;
+  background-color: green;
+  color: black;
+  text-align: center;
+}
+
+footer p {
+  font-family: 'Courier New', monospace;
+  font-size: 0.8em;
+  font-weight: bold;
+  margin-top: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 .container {
@@ -164,7 +158,7 @@ footer {
   flex-grow: 1;
   box-sizing: border-box;
   width: 100%;
-  height: 100%;
+  height: calc(100% - 60px);
 }
 
 #editor {

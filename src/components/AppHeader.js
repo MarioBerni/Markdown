@@ -3,15 +3,15 @@ import React from 'react';
 function AppHeader() {
   return (
     <header>
-      <div className="logo">
-        <img src="/images/logo.png" alt="logo" />
+      <div className="header-title">
+        <img src="/images/logo.png" alt="logo" className="logo" />
       </div>
-      <h1 className="header-title">Previsualizador</h1>
     </header>
   );
 }
 
 export default AppHeader;
+
 
 
 
