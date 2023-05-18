@@ -40,14 +40,14 @@ function AppFooter() {
 
   return (
     <footer>
-      <div style={{ visibility: 'hidden', position: 'absolute' }}>
-        {fullText}
+      <div style={{ height: '1em', overflow: 'hidden', display: 'flex', justifyContent: 'center' }}>
+        <p style={{ margin: 0, padding: 0, color: 'transparent' }}>{fullText}</p>
       </div>
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%' }}>
-        <p>{text}</p>
-      </div>
+      <p style={{ position: 'absolute', bottom: 0, margin: 0, padding: 0 }}>{text}</p>
     </footer>
   );  
 }
 
 export default AppFooter;
+
+
